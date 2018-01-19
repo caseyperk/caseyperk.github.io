@@ -37,7 +37,7 @@ img {
 .fade-in {
 	width: 100%;
 	min-height: 100%;
-	background-image: url("Art/Background.png");
+	background-image: url("caseyperk.github.io/Art/Background.png");
 	opacity: 0;
 	-webkit-animation: fadeIn ease-in 1;
 	-moz-animation: fadeIn ease-in 1;
