@@ -27,7 +27,8 @@ header img {
 }
 
 img {
-    height: auto;
+    	cursor: url("Art/Magnifying Glass.png"), auto;
+	height: auto;
 	width: 8%;
 	opacity: 0.5;
 	-webkit-animation-delay: 5.2s;
