@@ -9,6 +9,7 @@ html,body {
 
 body {
 	text-align: center;
+	cursor: url("Art/Magnifying Glass.png"), auto;
 }
 
 header {
