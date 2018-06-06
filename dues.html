@@ -26,6 +26,9 @@
         			.attr('width', w)
         			.attr('height', h);
 
+        var y = d3.scale.linear().domain([2123, 119440]).range([660, 0]);
+        var x = d3.scale.log().domain([8000, 2000000]).range([0, 1245]);
+
         // Create an empty set (since there aren't any yet) of <circle> elements within the svg
         svg.selectAll('circle')
            // Select/call the data
