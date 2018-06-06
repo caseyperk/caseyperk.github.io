@@ -43,7 +43,7 @@
           var myChart = new dimple.chart(svg, data);
           var x = myChart.addMeasureAxis("x", "Population");
           myChart.addMeasureAxis("y", "Dues");
-          x.measureInterval = 10000;
+          myChart.setBounds(0, 130000, 0, 2000000);
           myChart.addSeries(null, dimple.plot.line);
           myChart.addSeries(null, dimple.plot.scatter);
           myChart.draw();
