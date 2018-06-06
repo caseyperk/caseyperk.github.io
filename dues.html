@@ -26,8 +26,8 @@
         			.attr('width', w)
         			.attr('height', h);
 
-        var y = d3.scale.linear().domain([2123, 119440]).range([660, 0]);
-        var x = d3.scale.log().domain([8000, 2000000]).range([0, 1245]);
+        var y = d3.scale.linear().domain([0, d3.max(data, function(d) { return d.h; })]).range([0, h]);
+        var x = d3.scale.linear().domain([0, d3.max(data, function(d) { return d.w; })]).range([0, w]);
 
         // Create an empty set (since there aren't any yet) of <circle> elements within the svg
         svg.selectAll('circle')
@@ -38,11 +38,11 @@
            // Now append the <circle> elements. Each <element> represents a data point in the data set
            .append('circle')
            // First attribute for a <circle> element, 'cx', depends on the "Population" variable's value
-           .attr('cx', function(d, i) { return d.Population })
+           .attr('cx', function(d, i) { return d.Population; })
            // Second attribute for a <circle> element, 'cy', depends on the "Dues" variable's value
-           .attr('cy', function(d, i) { return h - d.Dues })
+           .attr('cy', function(d, i) { return h - d.Dues; })
            // Third attribute for a <circle> element, 'r', depends on the "Dues per Capita" variable's value
-           .attr('r', function(d, i) { return d["Dues Per Capita"]})
+           .attr('r', function(d, i) { return d["Dues Per Capita"];})
            // Give the <circle> elements/data points some color
            .attr('fill', 'red');
 
