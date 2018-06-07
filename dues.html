@@ -24,7 +24,7 @@
 
       var y = d3.scale.linear().domain([0, d3.max(data, function(d) { return d.Dues; })]).range([h * .95, 0]);
       var x = d3.scale.linear().domain([0, d3.max(data, function(d) { return d.Population; })]).range([0, w * .95]);
-      var r = d3.scale.sqrt().domain([0, d3.max(data, function(d) { return d["Dues per Capita"]; })]).range([0, 50]);
+      var r = d3.scale.sqrt().domain([0, d3.max(data, function(d) { return d["Dues Per Capita"]; })]).range([0, 50]);
 
       // Create an empty set (since there aren't any yet) of <circle> elements within the svg
       svg.selectAll('circle')
