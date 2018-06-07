@@ -13,8 +13,9 @@
 
       "use strict";
       // Start by defining the width and height of the svg so that these can easily be adjusted
-      var w = 500;
-      var h = 300;
+      var w = 1000;
+      var h = 1000;
+      var padding = 200;
 
       // Create the svg variable (with attributes) that appends an svg to the <body> tag
       var svg = d3.select('div')
@@ -23,9 +24,9 @@
      	  		  .attr('height', h);
 
       // Create the y scale with .domain based on the data and .range based on pixel values
-      var y = d3.scale.linear().domain([0, d3.max(data, function(d) { return d.Dues; })]).range([h, 0]);
+      var y = d3.scale.linear().domain([0, d3.max(data, function(d) { return d.Dues; })]).range([h - padding, padding]);
       // Create the x scale with .domain based on the data and .range based on pixel values
-      var x = d3.scale.linear().domain([0, d3.max(data, function(d) { return d.Population; })]).range([0, w]);
+      var x = d3.scale.linear().domain([0, d3.max(data, function(d) { return d.Population; })]).range([padding, w - padding]);
       // Create the radius scale with .domain based on the data and .range based on pixel values
       var r = d3.scale.sqrt().domain([0, d3.max(data, function(d) { return d["Dues Per Capita"]; })]).range([0, 20]);
 
@@ -50,7 +51,7 @@
     </script>
   </head>
 <body>
-  <div style="width: 1000px; height: 1000px;">
+  <div style="width: 1000px; height: 1000px; margin: 20px;">
   <script type="text/javascript">
     /*
     Use D3 to load the TSV file
