@@ -22,8 +22,11 @@
         		  .attr('width', w)
      	  		  .attr('height', h);
 
-      var y = d3.scale.linear().domain([0, d3.max(data, function(d) { return d.Dues; })]).range([h * .95, 0]);
-      var x = d3.scale.linear().domain([0, d3.max(data, function(d) { return d.Population; })]).range([0, w * .95]);
+      // Create the y scale with .domain based on the data and .range based on pixel values
+      var y = d3.scale.linear().domain([0, d3.max(data, function(d) { return d.Dues; })]).range([h * 0.95, h * 0.05]);
+      // Create the x scale with .domain based on the data and .range based on pixel values
+      var x = d3.scale.linear().domain([0, d3.max(data, function(d) { return d.Population; })]).range([w * 0.05, w * .95]);
+      // Create the radius scale with .domain based on the data and .range based on pixel values
       var r = d3.scale.sqrt().domain([0, d3.max(data, function(d) { return d["Dues Per Capita"]; })]).range([0, 20]);
 
       // Create an empty set (since there aren't any yet) of <circle> elements within the svg
