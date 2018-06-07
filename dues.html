@@ -8,8 +8,8 @@
 
       "use strict";
       // Start by defining the width and height of the svg so that these can easily be adjusted
-      var w = 1245;
-      var h = 660;
+      var w = 400;
+      var h = 400;
 
       // Create the svg variable (with attributes) that appends an svg to the <body> tag
       var svg = d3.select('body')
@@ -29,9 +29,9 @@
          // Now append the <circle> elements. Each <element> represents a data point in the data set
          .append('circle')
          // First attribute for a <circle> element, 'cx', depends on the "Population" variable's value
-         .attr('cx', function(d, i) { return x(d.Population); })
+         .attr('cx', function(d, i) { return d.Population; })
          // Second attribute for a <circle> element, 'cy', depends on the "Dues" variable's value
-         .attr('cy', function(d, i) { return y(h - d.Dues); })
+         .attr('cy', function(d, i) { return d.Dues; })
          // Third attribute for a <circle> element, 'r', depends on the "Dues per Capita" variable's value
          .attr('r', function(d, i) { return 100 * d["Dues Per Capita"]; })
          // Give the <circle> elements/data points some color
