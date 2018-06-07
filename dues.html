@@ -13,8 +13,8 @@
 
       "use strict";
       // Start by defining the width and height of the svg so that these can easily be adjusted
-      var w = 1000;
-      var h = 1000;
+      var w = 500;
+      var h = 300;
 
       // Create the svg variable (with attributes) that appends an svg to the <body> tag
       var svg = d3.select('div')
@@ -23,9 +23,9 @@
      	  		  .attr('height', h);
 
       // Create the y scale with .domain based on the data and .range based on pixel values
-      var y = d3.scale.linear().domain([0, d3.max(data, function(d) { return d.Dues; })]).range([1000, 0]);
+      var y = d3.scale.linear().domain([0, d3.max(data, function(d) { return d.Dues; })]).range([h, 0]);
       // Create the x scale with .domain based on the data and .range based on pixel values
-      var x = d3.scale.linear().domain([0, d3.max(data, function(d) { return d.Population; })]).range([0, 1000]);
+      var x = d3.scale.linear().domain([0, d3.max(data, function(d) { return d.Population; })]).range([0, w]);
       // Create the radius scale with .domain based on the data and .range based on pixel values
       var r = d3.scale.sqrt().domain([0, d3.max(data, function(d) { return d["Dues Per Capita"]; })]).range([0, 20]);
 
