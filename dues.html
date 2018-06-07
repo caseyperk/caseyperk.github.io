@@ -17,8 +17,8 @@
         		  .attr('width', w)
      	  		  .attr('height', h);
 
-      var y = d3.scale.linear().domain([0, d3.max(data, function(d) { return d.h; })]).range([0, h]);
-      var x = d3.scale.linear().domain([0, d3.max(data, function(d) { return d.w; })]).range([0, w]);
+      y = d3.scale.linear().domain([0, d3.max(data, function(d) { return d.h; })]).range([h, 0]);
+      x = d3.scale.linear().domain([0, d3.max(data, function(d) { return d.w; })]).range([0, w]);
 
       // Create an empty set (since there aren't any yet) of <circle> elements within the svg
       svg.selectAll('circle')
@@ -42,11 +42,11 @@
   </head>
 <body>
   <script type="text/javascript">
-  /*
+    /*
     Use D3 to load the TSV file
     and pass the contents of it to the draw function
     */
-  d3.tsv("2017-18.tsv", draw);
+    d3.tsv("2017-18.tsv", draw);
   </script>
 </body>
 </html>
