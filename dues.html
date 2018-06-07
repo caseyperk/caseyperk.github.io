@@ -17,8 +17,8 @@
         		  .attr('width', w)
      	  		  .attr('height', h);
 
-      y = d3.scale.linear().domain([0, d3.max(data, function(d) { return d.h; })]).range([h, 0]);
-      x = d3.scale.linear().domain([0, d3.max(data, function(d) { return d.w; })]).range([0, w]);
+      var y = d3.scale.linear().domain([0, d3.max(data, function(d) { return d.h; })]).range([h, 0]);
+      var x = d3.scale.linear().domain([0, d3.max(data, function(d) { return d.w; })]).range([0, w]);
 
       // Create an empty set (since there aren't any yet) of <circle> elements within the svg
       svg.selectAll('circle')
