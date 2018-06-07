@@ -17,7 +17,7 @@
       var h = 1000;
 
       // Create the svg variable (with attributes) that appends an svg to the <body> tag
-      var svg = d3.select('body')
+      var svg = d3.select('div')
         		  .append('svg')
         		  .attr('width', w)
      	  		  .attr('height', h);
@@ -50,6 +50,7 @@
     </script>
   </head>
 <body>
+  <div>
   <script type="text/javascript">
     /*
     Use D3 to load the TSV file
@@ -57,5 +58,6 @@
     */
     d3.tsv("2017-18.tsv", draw);
   </script>
+</div>
 </body>
 </html>
