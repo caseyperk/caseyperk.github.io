@@ -4,13 +4,12 @@
   <meta charset="utf-8">
   <script src="http://d3js.org/d3.v3.min.js"></script>
   <script type="text/javascript">
-    function draw() {
+    function draw(data) {
 
       "use strict";
       // Start by defining the width and height of the svg so that these can easily be adjusted
       var w = 400;
       var h = 400;
-      var data = d3.tsv("2017-18.tsv");
 
       // Create the svg variable (with attributes) that appends an svg to the <body> tag
       var svg = d3.select('body')
@@ -47,7 +46,7 @@
     Use D3 to load the TSV file
     and pass the contents of it to the draw function
     */
-    draw();
+    d3.tsv("2017-18.tsv", draw);
   </script>
 </body>
 </html>
