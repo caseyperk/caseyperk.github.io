@@ -23,9 +23,9 @@
      	  		  .attr('height', h);
 
       // Create the y scale with .domain based on the data and .range based on pixel values
-      var y = d3.scale.linear().domain([0, d3.max(data, function(d) { return d.Dues; })]).range([h * 0.95, h * 0.05]);
+      var y = d3.scale.linear().domain([0, d3.max(data, function(d) { return d.Dues; })]).range([1000, 0]);
       // Create the x scale with .domain based on the data and .range based on pixel values
-      var x = d3.scale.linear().domain([0, d3.max(data, function(d) { return d.Population; })]).range([w * 0.05, w * .95]);
+      var x = d3.scale.linear().domain([0, d3.max(data, function(d) { return d.Population; })]).range([0, 1000]);
       // Create the radius scale with .domain based on the data and .range based on pixel values
       var r = d3.scale.sqrt().domain([0, d3.max(data, function(d) { return d["Dues Per Capita"]; })]).range([0, 20]);
 
