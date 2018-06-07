@@ -24,6 +24,7 @@
 
       var y = d3.scale.linear().domain([0, d3.max(data, function(d) { return d.Dues; })]).range([h * .95, 0]);
       var x = d3.scale.linear().domain([0, d3.max(data, function(d) { return d.Population; })]).range([0, w * .95]);
+      var r = d3.scale.sqrt().domain([0, d3.max(data, function(d) { return d["Dues per Capita"]; })]).range([0, 50]);
 
       // Create an empty set (since there aren't any yet) of <circle> elements within the svg
       svg.selectAll('circle')
@@ -38,7 +39,7 @@
          // Second attribute for a <circle> element, 'cy', depends on the "Dues" variable's value
          .attr('cy', function(d, i) { return h - y(d.Dues); })
          // Third attribute for a <circle> element, 'r', depends on the "Dues per Capita" variable's value
-         .attr('r', function(d, i) { return 100 * d["Dues Per Capita"]; })
+         .attr('r', function(d, i) { return r(d["Dues Per Capita"]); })
          // Give the <circle> elements/data points some color
          .attr('fill', 'red');
 
