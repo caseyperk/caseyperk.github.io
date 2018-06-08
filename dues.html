@@ -43,7 +43,7 @@
          // Second attribute for a <circle> element, 'cy', depends on the "Dues" variable's value
          .attr('cy', function(d, i) { return y(d.Dues); })
          // Third attribute for a <circle> element, 'r', depends on the "Dues per Capita" variable's value
-         .attr('r', function(d, i) { return r(d["Dues Per Capita"]); })
+         .attr('r', function(d, i) { return r(d.Population / d.Dues); })
          // Give the <circle> elements/data points some color
          .attr('fill', 'red');
 
