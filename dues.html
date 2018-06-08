@@ -24,9 +24,9 @@
      	  		  .attr('height', h);
 
       // Create the y scale with .domain based on the data and .range based on pixel values
-      var y = d3.scale.log().domain([0, 120000]).range([h - padding, padding]);
+      var y = d3.scale.linear().domain([0, 120000]).range([h - padding, padding]);
       // Create the x scale with .domain based on the data and .range based on pixel values
-      var x = d3.scale.linear().domain([0, 2750000]).range([padding, w - padding]);
+      var x = d3.scale.log().domain([0, 2750000]).range([padding, w - padding]);
       // Create the radius scale with .domain based on the data and .range based on pixel values
       var r = d3.scale.sqrt().domain([0, 23]).range([0, 10]);
 
