@@ -111,14 +111,15 @@
               .attr('transform', "translate(" + margin + ",0)")
               .call(count_axis);
         
-        d3.select("svg")
-          .append('text')
-          .attr('class', 'y label')
-          .attr('text-anchor', 'end')
-          .attr('y', 10)
-          .attr('dy', '.75em')
-          .attr('transform', 'rotate(-90)')
-          .text('overdoses');
+          d3.select("svg")
+            .append('text')
+            .attr('class', 'y label')
+            .attr('text-anchor', 'end')
+            .attr('x', 10)
+            .attr('y', 10)
+            .attr('dy', '.75em')
+            .attr('transform', 'rotate(-90)')
+            .text('overdoses');
 
           d3.selectAll('circle')
               .attr('cx', function(d) {
