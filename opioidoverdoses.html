@@ -10,6 +10,7 @@
 </style>
 <svg width="960" height="500"></svg>
 <script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
 <script>
 
 var svg = d3.select("svg"),
@@ -55,6 +56,8 @@ d3.csv("opioidDeathsFL.csv", function(d, i, columns) {
       .attr("y", function(d) { return y(d[1]); })
       .attr("height", function(d) { return y(d[0]) - y(d[1]); })
       .attr("width", x.bandwidth())
+      .on('mouseover', tip.show)
+      .on('mouseout', tip.hide);
 
   g.append("g")
       .attr("class", "axis")
