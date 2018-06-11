@@ -6,6 +6,7 @@
 </head>
 <body>
   <div id="chartContainer">
+  <script type="text/javascript">
     var svg = dimple.newSvg("#chartContainer", 590, 400);
     d3.csv("opioidDeathsFL.csv", function(data) {
     myChart.setBounds(80, 30, 480, 330);
@@ -14,6 +15,7 @@
     myChart.addSeries("", dimple.plot.bar);
     myChart.draw;
     });
+    </script>
   </div>
 </body>
 </html>
