@@ -83,13 +83,13 @@ d3.csv("opioidDeathsFL.csv", function(d, i, columns) {
       .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
 
   legend.append("rect")
-      .attr("x", width / 2)
+      .attr("x", width * .4)
       .attr("width", 19)
       .attr("height", 19)
       .attr("fill", z);
 
   legend.append("text")
-      .attr("x", width / 2 - 5)
+      .attr("x", width * .4 - 5)
       .attr("y", 9.5)
       .attr("dy", "0.32em")
       .text(function(d) { return d; });
