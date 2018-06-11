@@ -56,8 +56,8 @@ d3.csv("opioidDeathsFL.csv", function(d, i, columns) {
       .attr("height", function(d) { return y(d[0]) - y(d[1]); })
       .attr("width", x.bandwidth())
       .on("mouseover", function() { return tooltip.style("visibility", "visible"); })
-      .on("mouseover", function() { return tooltip.style("top", "topsy"; });
-      .on("mouseout", function() { return tooltip.style("visibility", "hidden") });
+      .on("mouseover", function() { return tooltip.style("top", "topsy"; })
+      .on("mouseout", function() { return tooltip.style("visibility", "hidden"); });
 
   g.append("g")
       .attr("class", "axis")
