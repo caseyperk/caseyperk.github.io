@@ -6,7 +6,10 @@
   src="https://code.jquery.com/jquery-1.11.0.js"
   integrity="sha256-zgND4db0iXaO7v4CLBIYHGoIIudWI5hRMQrPB20j0Qw="
   crossorigin="anonymous"></script>
-   <script>
+</head>
+<body>
+  <canvas id="chart1"></canvas>
+  <script>
     var ctx = document.getElementById('chart1').getContext("2d");
     var data = {
     labels: ["January", "February", "March", "April", "May", "June", "July"],
@@ -72,8 +75,5 @@ var myLineChart = new Chart(ctx, {
 });
 
   </script>
-</head>
-<body>
-  <canvas id="chart1"></canvas>
 </body>
 </html>
