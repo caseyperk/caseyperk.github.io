@@ -63,6 +63,7 @@ d3.csv("opioidDeathsFL.csv", function(d, i, columns) {
 
   g.append("g")
       .attr("class", "axis")
+      .orient("right")
       .call(d3.axisRight(y).ticks(null, "s"))
     .append("text")
       .attr("x", 2)
