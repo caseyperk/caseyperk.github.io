@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="/lib/d3.v4.3.0.js"></script>
+  <script src="http://dimplejs.org/dist/dimple.v2.3.0.min.js"></script>
+</head>
+<body>
+  <div id="chartContainer">
+    var svg = dimple.newSvg("#chartContainer", 590, 400);
+    d3.csv("opioidDeathsFL.csv", function(data) {
+    myChart.setBounds(80, 30, 480, 330);
+    myChart.addCategoryAxis("x", "Year");
+    myChart.addMeasureAxis("y", "Deaths");
+    myChart.addSeries("", dimple.plot.bar);
+    myChart.draw;
+    });
+  </div>
+</body>
+</html>
