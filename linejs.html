@@ -7,13 +7,17 @@
   integrity="sha256-zgND4db0iXaO7v4CLBIYHGoIIudWI5hRMQrPB20j0Qw="
   crossorigin="anonymous"></script>
 </head>
-<body>
-  <canvas id="chart1"></canvas>
-  <script>
-    var ctx = document.getElementById('chart1').getContext("2d");
-    var data = {
-    labels: ["January", "February", "March", "April", "May", "June", "July"],
-    datasets: [
+  
+  <body>
+    <iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;"></iframe>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.js"></script>
+    <canvas id="chart1" width="629" height="314" style="display: block; width: 629px; height: 314px;"></canvas>
+    <script type="text/javascript">
+      var ctx = document.getElementById('chart1').getContext("2d");
+      var data = {
+      labels: ["January", "February", "March", "April", "May", "June", "July"],
+      datasets: [
         {
             label: "My First dataset",
             fill: false,
@@ -50,6 +54,19 @@ var options = {
             fontSize: 18,
             fontColor: "#111"
         },
+        tooltips: {
+                enabled: true,
+                mode: 'single',
+                callbacks: {
+                    label: function(tooltipItems, data) { 
+                       var multistringText = [tooltipItems.yLabel];
+                           multistringText.push('Another Item');
+                           multistringText.push(tooltipItems.index+1);
+                           multistringText.push('One more Item');
+                        return multistringText;
+                    }
+                }
+            },
         legend: {
             display: true,
             position: "bottom",
@@ -73,7 +90,7 @@ var myLineChart = new Chart(ctx, {
     data: data,
     options: options
 });
-
-  </script>
+    </script>
+  
 </body>
-</html>
+</html>  
