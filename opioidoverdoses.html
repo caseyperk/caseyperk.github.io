@@ -55,7 +55,9 @@ d3.csv("opioidDeathsFL.csv", function(d, i, columns) {
       .attr("y", function(d) { return y(d[1]); })
       .attr("height", function(d) { return y(d[0]) - y(d[1]); })
       .attr("width", x.bandwidth())
-      .text(function(d) { return d[0] });
+      .on("mouseover", function() { return tooltip.style("visibility", "visible"); })
+      .on("mouseover", function() { return tooltip.style("top", "topsy"; });
+      .on("mouseout", function() { return tooltip.style("visibility", "hidden") });
 
   g.append("g")
       .attr("class", "axis")
@@ -72,7 +74,6 @@ d3.csv("opioidDeathsFL.csv", function(d, i, columns) {
       .attr("fill", "#000")
       .attr("font-weight", "bold")
       .attr("text-anchor", "start")
-      .text("Overdose Deaths");
 
   var legend = g.append("g")
       .attr("font-family", "sans-serif")
