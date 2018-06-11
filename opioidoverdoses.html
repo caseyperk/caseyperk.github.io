@@ -54,7 +54,8 @@ d3.csv("opioidDeathsFL.csv", function(d, i, columns) {
       .attr("x", function(d) { return x(d.data.Year); })
       .attr("y", function(d) { return y(d[1]); })
       .attr("height", function(d) { return y(d[0]) - y(d[1]); })
-      .attr("width", x.bandwidth());
+      .attr("width", x.bandwidth())
+      .text(function(d) { return d[0] });
 
   g.append("g")
       .attr("class", "axis")
