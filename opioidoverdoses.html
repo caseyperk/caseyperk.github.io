@@ -10,7 +10,6 @@
 </style>
 <svg width="960" height="500"></svg>
 <script src="https://d3js.org/d3.v4.min.js"></script>
-<script type="text/javascript" src="http://mbostock.github.com/d3/d3.js"></script>
 <script>
 
 var svg = d3.select("svg"),
@@ -56,9 +55,6 @@ d3.csv("opioidDeathsFL.csv", function(d, i, columns) {
       .attr("y", function(d) { return y(d[1]); })
       .attr("height", function(d) { return y(d[0]) - y(d[1]); })
       .attr("width", x.bandwidth())
-      .on("mouseover", function() { return tooltip.style("visibility", "visible"); })
-      .on("mouseover", function() { return tooltip.style("top", "topsy"); })
-      .on("mouseout", function() { return tooltip.style("visibility", "hidden"); });
 
   g.append("g")
       .attr("class", "axis")
