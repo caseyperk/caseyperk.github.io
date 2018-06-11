@@ -11,8 +11,8 @@
     d3.csv("opioidDeathsFL.csv", function(data) {
     myChart.setBounds(80, 30, 480, 330);
     myChart.addCategoryAxis("x", "Year");
-    myChart.addMeasureAxis("y", "Deaths");
-    myChart.addSeries("", dimple.plot.bar);
+    myChart.addMeasureAxis("y", "All Drug Overdose Deaths");
+    myChart.addSeries("All Drug Overdose Deaths", dimple.plot.bar);
     myChart.draw;
     });
     </script>
